@@ -1,0 +1,65 @@
+{
+  "env": {
+    "node": true,
+    "commonjs": true
+  },
+  "extends": [
+    "standard",
+    "eslint:recommended",
+    "plugin:n/recommended",
+
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "sourceType": "module",
+    "ecmaVersion": 12,
+    "ecmaFeatures": {
+      "impliedStrict": true
+    }
+  },
+  "rules": {
+    // Format errors ===============================================================
+    "prettier/prettier": ["error", { "quoteProps": "preserve" }],
+
+    // NodeJS errors ===============================================================
+    "n/exports-style": ["error", "module.exports"],
+    "n/file-extension-in-import": ["error", "always"],
+    "n/prefer-global/buffer": ["error", "always"],
+    "n/prefer-global/console": ["error", "always"],
+    "n/prefer-global/process": ["error", "always"],
+    "n/prefer-global/url-search-params": ["error", "always"],
+    "n/prefer-global/url": ["error", "always"],
+    "n/prefer-promises/dns": "error",
+    "n/prefer-promises/fs": "error",
+    "no-use-before-define": ["error", { "functions": false }],
+    "n/no-unsupported-features/node-builtins": "off",
+
+    // VanillaJS errors =============================================================
+    "import/no-useless-path-segments": [
+      "error",
+      {
+        "noUselessIndex": true
+      }
+    ],
+    "no-restricted-syntax": [
+      "error",
+      "LabeledStatement",
+      "ForInStatement",
+      "WithStatement"
+    ],
+    "no-underscore-dangle": 0,
+    "class-methods-use-this": 0,
+    "max-classes-per-file": ["error", 7],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "consistent-return": "off",
+    "no-unused-expressions": "off",
+    "no-await-in-loop": "off",
+    "camelcase": "off",
+    "no-useless-escape": "off",
+    "no-continue": "off"
+  }
+}

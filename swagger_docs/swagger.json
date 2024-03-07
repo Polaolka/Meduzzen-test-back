@@ -1,0 +1,1 @@
+{"openapi":"3.0.1","info":{"version":"0.0.1","title":"requesty-lending-back","description":"WEB API for data fetching"},"servers":[{"url":"https://localhost:4000/api/v0","description":"Main  API"}],"paths":{}}
