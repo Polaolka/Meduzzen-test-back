@@ -14,9 +14,10 @@ const {
 
 const HttpException = require('../helpers/HttpException.helper');
 const Config = require('../config');
-const db = require('../DBconfig');
+
 const Super = require('./super');
 const userConverter = require('../Models/User.model');
+const db = require('../DBconfig');
 const usersRef = collection(db, 'users');
 
 const JWT_ACCESS_SECRET = Config.JWT_ACCESS_SECRET;

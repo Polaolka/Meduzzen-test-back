@@ -21,13 +21,14 @@ const {
   getDownloadURL,
   uploadBytesResumable,
 } = require('firebase/storage');
-const db = require('../DBconfig');
+
 const storage = getStorage();
 const storageRef = ref(storage);
 const imagesRef = ref(storage, 'images');
 const path = require('path');
 const Super = require('./super');
 const HttpException = require('../helpers/HttpException.helper');
+const db = require('../DBconfig');
 
 const chatsRef = collection(db, 'chats');
 const usersRef = collection(db, 'users');
@@ -78,20 +79,6 @@ class Chat extends Super {
     const chatDocSnap = await getDoc(chatDoc);
 
     if (chatDocSnap.exists()) {
-      // const chatMessagesQuery = query(collection(chatDoc, 'messages'));
-      // const chatMessagesSnap = await getDocs(chatMessagesQuery);
-
-      // const chatData = {
-      //   chatId: chatDocSnap.id,
-      //   participants: chatDocSnap.data().participants,
-      //   messages: chatMessagesSnap.docs.map(messageDoc => ({
-      //     messageId: messageDoc.id,
-      //     ...messageDoc.data(),
-      //   })),
-      // };
-
-      // return chatData;
-      // return chatDocSnap.data();
       const chatData = await this.getChatData(chatId)
       return chatData;
     } else {
