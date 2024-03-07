@@ -42,7 +42,7 @@ class Auth {
   static async logoutUser(req, res, next) {
     try {
       const RequestDTO = await mapper.toRequestDTO({
-        data: req,
+        data: req.body.data,
         validationSchema: logoutUserDTO,
       });
       const response = await authService.logoutUser(RequestDTO);
