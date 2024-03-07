@@ -15,7 +15,7 @@ const {
 const mapper = require('../dto/mapper');
 const { addUserDTO } = require('../dto/responseDTO/user.dto');
 const Config = require('../config');
-const db = require('../DBconfig');
+const db = require('../DBConfig');
 const Super = require('./super');
 const userConverter = require('../Models/User.model');
 

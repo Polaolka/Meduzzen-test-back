@@ -28,7 +28,8 @@ const imagesRef = ref(storage, 'images');
 const path = require('path');
 const Super = require('./super');
 const HttpException = require('../helpers/HttpException.helper');
-const db = require('../DBconfig');
+const db = require('../DBConfig');
+
 
 const chatsRef = collection(db, 'chats');
 const usersRef = collection(db, 'users');
@@ -39,12 +40,6 @@ class Chat extends Super {
       BASE_ENDPOINT: '/chats',
     });
   }
-
-  // generateChatId(user1Id, user2Id) {
-  //   const sortedIds = [user1Id, user2Id].sort();
-  //   return `${sortedIds[0]}_${sortedIds[1]}`;
-  // }
-
   async getChatData(chatId) {
     try {
       const chatDoc = doc(chatsRef, chatId);

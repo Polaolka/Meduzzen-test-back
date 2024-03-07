@@ -17,7 +17,7 @@ const Config = require('../config');
 
 const Super = require('./super');
 const userConverter = require('../Models/User.model');
-const db = require('../DBconfig');
+const db = require('../DBConfig');
 const usersRef = collection(db, 'users');
 
 const JWT_ACCESS_SECRET = Config.JWT_ACCESS_SECRET;
