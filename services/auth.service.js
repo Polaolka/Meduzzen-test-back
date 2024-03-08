@@ -39,7 +39,7 @@ class Auth extends Super {
       const count = snapshot.data().count;
       if (count >= 1) {
         console.error('Error adding document: !!!!!');
-        return;
+        throw HttpException.BAD_REQUEST(`User with emai ${addUserDTO.email} already exsist`);;
       }
       const hashPassword = await bcrypt.hash(addUserDTO.password, 10);
       const newUserRef = await addDoc(collection(db, 'users'), {
